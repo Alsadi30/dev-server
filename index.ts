@@ -17,7 +17,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 setMiddleware(app)
 
 app.get('/', (req, res) => {
-  res.send('ok')
+  res.sendStatus(200)
 })
 
 
@@ -31,7 +31,7 @@ MyDataSource.initialize()
   })
   .catch((error) => console.log(error))
 
-app.listen(port, () => {
+app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`)
 })
 
