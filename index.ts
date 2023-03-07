@@ -6,6 +6,9 @@ const express = require('express')
 const MyDataSource = require('./config/database')
 const app = express()
 
+
+const { PORT } = process.env
+
 app.use(express.json());
 const port = 10000
 
@@ -29,6 +32,6 @@ MyDataSource.initialize()
   .catch((error) => console.log(error))
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Example app listening on port ${PORT}`)
 })
 
